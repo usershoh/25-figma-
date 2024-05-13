@@ -1,0 +1,98 @@
+.comment > div {
+  padding: 20px 0;
+  @include grid(1fr 1fr, 30px);
+  align-items: center;
+}
+.comment_text {
+  @include grid(1fr, 10px);
+
+  h2 {
+    font-size: 18px;
+    color: $color-yellow;
+    font-family: $montserrat;
+  }
+  h1 {
+    font-size: 48px;
+    color: $color-black;
+    font-family: $PT-sans;
+  }
+  p {
+    font-size: 16px;
+    color: $color-gray;
+    font-family: $montserrat;
+  }
+}
+.comment_items {
+  @include grid(1fr, 20px);
+}
+.comment_item {
+  @include flex(flex-start, flex-start, 10px);
+  padding: 20px 20px;
+  box-shadow: 2px 2px 20px #00000010, -2px -2px 20px #00000010;
+
+  img {
+    width: 50px;
+    height: 50px;
+  }
+  &_text {
+    @include grid(1fr, 5px);
+    font-family: $montserrat;
+
+    h1 {
+      font-size: 20px;
+      color: $color-black;
+      font-weight: 600;
+    }
+    h2 {
+      font-size: 12px;
+      color: $color-gray;
+      font-weight: 400;
+    }
+    img {
+      width: 16px;
+      height: 16px;
+    }
+    p {
+      font-size: 16px;
+      color: $color-gray;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .comment_item {
+    p {
+      font-size: 14px;
+    }
+  }
+}
+
+@media (max-width: 705px) {
+  .comment > div {
+    @include grid(1fr, 20px);
+  }
+}
+
+@media (max-width: 360px) {
+  .comment_text {
+    h1 {
+      font-size: 32px;
+    }
+  }
+  .comment_item {
+    padding: 15px;
+    img {
+      width: 40px;
+      height: 40px;
+    }
+    &_text {
+      img {
+        width: 15px;
+        height: 15px;
+      }
+      p {
+        font-size: 12px;
+      }
+    }
+  }
+}

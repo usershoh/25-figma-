@@ -1,0 +1,108 @@
+.footer {
+  background-color: $color-black;
+  padding: 50px 0;
+  font-family: $montserrat;
+  margin-top: 50px;
+}
+.footer > div {
+  @include grid(2fr 1fr 1fr 1fr 1.5fr, 20px);
+  align-items: flex-start;
+}
+.footer_item {
+  @include grid(1fr, 10px);
+
+  &_logo {
+    padding-bottom: 5px;
+    width: 90px;
+  }
+
+  h2 {
+    font-size: 22px;
+    color: $color-white;
+    font-weight: 500;
+    padding-bottom: 5px;
+  }
+  p {
+    font-size: 16px;
+    color: $color-white;
+    font-weight: 200;
+  }
+  ul {
+    @include grid(1fr, 10px);
+
+    li a {
+      font-size: 15px;
+      color: $color-white;
+      font-weight: 200;
+    }
+    li a:hover {
+      color: $color-yellow;
+    }
+  }
+  &_brend {
+    @include flex(center, flex-start, 10px);
+    padding-top: 10px;
+
+    &_ {
+      width: 40px;
+      height: 40px;
+      border-radius: 2px;
+      background-color: $color-white;
+      @include flex(center, center, 0);
+      padding-top: 1px;
+
+      i {
+        font-size: 20px;
+        color: $color-yellow;
+      }
+    }
+    &_:hover {
+      i {
+        color: $color-btn;
+      }
+    }
+  }
+  &_btn {
+    width: 100%;
+    height: 40px;
+    @include flex(center, space-between, 0);
+    background-color: $color-white;
+    padding-left: 12px;
+
+    input {
+      width: 80%;
+      font-size: 16px;
+      color: $color-black;
+      outline: 0;
+      outline-offset: 0;
+      border: none;
+    }
+    &_ {
+      width: 40px;
+      height: 40px;
+      background-color: $color-yellow;
+      @include flex(center, center, 0);
+      padding-top: 1px;
+      padding-right: 1px;
+    }
+    &_:hover {
+      background-color: $color-btn;
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  .footer > div {
+    @include grid(1.5fr 1fr 1fr, 30px);
+  }
+}
+@media (max-width: 750px) {
+  .footer > div {
+    @include grid(1fr 1fr, 30px);
+  }
+}
+@media (max-width: 750px) {
+  .footer > div {
+    @include grid(1fr, 30px);
+  }
+}
